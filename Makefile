@@ -6,7 +6,7 @@ format:
 	black *.py mylib/*.py
 lint:
 	#pylint or flake8
-	pylint --disable-R,C *.py mylib/*.py
+	pylint --disable=R,C *.py mylib/*.py
 
 test:
 
