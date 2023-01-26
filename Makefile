@@ -12,9 +12,11 @@ test:
 	#testing
 	#python3 -m pytest -vv --cov=mylib test_logic.py
 build:
-	#build container
-
-
+	#build the docker image
+	docker build -t deploy-fastapi .
+run:
+	#running the docker contianer from docker image
+	docker run -p 127.0.0.1:8080:8080 1f53da591918
 deploy:
 
 all: install format lint test deploy
