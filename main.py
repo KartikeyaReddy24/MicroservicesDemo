@@ -26,6 +26,7 @@ async def wiki(name: str):
     result = wiki_logic(name)
     return {"result": result}
 
+
 @app.get("/phrase/{name}")
 async def phrase(name: str):
     """Retrive wikipedia page and return phrases"""
