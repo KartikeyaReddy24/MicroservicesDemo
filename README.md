@@ -8,3 +8,5 @@
 4. Setup the devops pipeline for continious integration by enabling required things
 5. Build a cli using python fire library to see how you coding works in developing stage. Its more like running your code like a bash script.
 6. 
+
+checking
