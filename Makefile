@@ -18,7 +18,7 @@ run:
 	#running the docker contianer from docker image
 	docker run -p 127.0.0.1:8080:8080 1f53da591918
 deploy:
-	docker login -u AWS -p $(aws ecr get-login-password --region us-east-1) 492094906798.dkr.ecr.us-east-1.amazonaws.com
+	docker login -u AWS --password-stdin $(aws ecr get-login-password --region us-east-1) 492094906798.dkr.ecr.us-east-1.amazonaws.com
 	docker build -t fastapi-wiki .
 	docker tag fastapi-wiki:latest 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wiki:latest
 	docker push 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wiki:latest
