@@ -18,9 +18,8 @@ run:
 	#running the docker contianer from docker image
 	docker run -p 127.0.0.1:8080:8080 1f53da591918
 deploy:
-	docker login --username AWS --password-stdin 492094906798.dkr.ecr.us-east-1.amazonaws.com
-	docker build -t fastapi-wiki .
-	docker tag fastapi-wiki:latest 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wiki:latest
-	docker push 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wiki:latest
-
+	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 492094906798.dkr.ecr.us-east-1.amazonaws.com
+	docker build -t fastapi-wikipedia .
+	docker tag fastapi-wikipedia:latest 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wikipedia:latest
+	docker push 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wikipedia:latest
 all: install format lint deploy
