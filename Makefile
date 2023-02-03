@@ -22,4 +22,4 @@ deploy:
 	docker build -t fastapi-wikipedia .
 	docker tag fastapi-wikipedia:latest 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wikipedia:latest
 	docker push 492094906798.dkr.ecr.us-east-1.amazonaws.com/fastapi-wikipedia:latest
-all: install format lint deploy run
+all: install format lint deploy
