@@ -8,7 +8,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Wikipedia API. Call /search or /wiki"}
+    return {"message": "This is Wikipedia API Microservice. You can search anything by calling Call /search or /wiki"}
 
 
 @app.get("/search/{value}")
